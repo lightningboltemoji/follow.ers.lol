@@ -5,15 +5,5 @@ const props = defineProps<{
 </script>
 
 <template>
-  <a :href target="_blank">↗ <slot /></a>
+  <a class="font-bold hover:underline hover:decoration-dotted" :href target="_blank">↗ <slot /></a>
 </template>
-
-<style scoped>
-a {
-  text-decoration: none;
-  font-weight: bold;
-}
-a:hover {
-  text-decoration: underline dotted;
-}
-</style>
