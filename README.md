@@ -14,6 +14,6 @@ Server @ http://localhost:3000
 ## Build & serve (production-like)
 
 ```bash
-bun build
+bun generate
 bun preview
 ```
