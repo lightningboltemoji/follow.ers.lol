@@ -1,4 +1,4 @@
 <template>
   <page-header />
-  <div>Guide</div>
+  <page-bounds><div>Guide</div></page-bounds>
 </template>

@@ -1,19 +1,19 @@
 <template>
-  <div class="[&>h1]:font-bold [&>h1]:text-2xl [&>h1:not(:first-child)]:mt-5">
+  <div class="[&>h1]:font-bold [&>h1]:text-2xl [&>h1:not(:first-child)]:mt-8">
     <h1>How does this work?</h1>
     <div>
-      <p>
+      <p class="mt-3">
         Instagram allows you to request a machine-readable export of your followers and following.
         By uploading it here, this tool will tell you who doesn't follow back and vice versa.
       </p>
-      <p>
+      <p class="mt-3">
         Additionally, you can upload exports from
         <i>two different days</i>, and it will tell you who has unfollowed you between them.
       </p>
     </div>
     <h1>How do I know you're not saving my data?</h1>
     <div>
-      <ul class="pl-4 list-disc">
+      <ul class="mt-3 pl-4 list-disc">
         <li>
           Before uploading your data, turn on Airplane Mode ✈ to ensure your data can't leave your
           phone.

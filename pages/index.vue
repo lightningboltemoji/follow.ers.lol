@@ -1,11 +1,19 @@
 <template>
+  <page-header />
   <page-bounds>
-    <page-header />
     <index-jumbo />
-    <div>
-      <button>Get started and guide me</button>
-      <button>I know what I'm doing, skip the instructions</button>
+    <div class="flex flex-col items-center mt-6 mb-8">
+      <NuxtLink to="/guided"
+        ><button class="bg-gray-800 text-white rounded-xl px-6 py-3 text-2xl">
+          Guide me through it
+        </button></NuxtLink
+      >
+      <NuxtLink to="/analyze">
+        <button class="bg-gray-500 text-white rounded-xl mt-3 px-6 py-3">
+          I've done this before, skip the instructions
+        </button></NuxtLink
+      >
     </div>
-    <index-faq />
+    <index-faq class="mt-10" />
   </page-bounds>
 </template>
