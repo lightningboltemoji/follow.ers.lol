@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <page-bounds>
     <page-header />
     <index-jumbo />
     <div>
@@ -7,5 +7,5 @@
       <button>I know what I'm doing, skip the instructions</button>
     </div>
     <index-faq />
-  </div>
+  </page-bounds>
 </template>
