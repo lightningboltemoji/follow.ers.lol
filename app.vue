@@ -1,5 +1,9 @@
 <template>
-  <NuxtPage />
+  <page-header />
+  <page-bounds>
+    <NuxtPage />
+  </page-bounds>
+  <page-footer />
 </template>
 
 <style>

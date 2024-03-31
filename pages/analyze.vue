@@ -34,17 +34,14 @@ async function parse(file: File) {
 </script>
 
 <template>
-  <page-header />
-  <page-bounds>
-    <div class="flex flex-col flex-grow">
-      <analyze-file-select class="flex-grow mt-3" :parse />
-      <analyze-selectable-view
-        class="flex-grow mt-5 mb-5"
-        :followers
-        :following
-        :notFollowingYouBack
-        :notFollowingThemBack
-      />
-    </div>
-  </page-bounds>
+  <div class="flex flex-col flex-grow">
+    <analyze-file-select class="flex-grow mt-3" :parse />
+    <analyze-selectable-view
+      class="flex-grow mt-5 mb-5"
+      :followers
+      :following
+      :notFollowingYouBack
+      :notFollowingThemBack
+    />
+  </div>
 </template>

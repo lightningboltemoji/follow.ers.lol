@@ -23,7 +23,7 @@ function share() {
 </script>
 
 <template>
-  <div class="flex mx-4 mt-2 py-1 text-xl">
+  <div class="flex mx-4 py-1 pt-2 text-xl sticky top-0 bg-[#ffd447]">
     <button class="mr-auto" @click="$router.back()">⬅️</button>
     <NuxtLink to="/">
       <span>follow.ers.lol {{ emoji }}</span>
