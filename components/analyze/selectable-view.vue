@@ -13,7 +13,11 @@ const selectedSet = computed(() => props[selected.value]);
 <template>
   <div>
     <form @submit.prevent="() => {}" class="flex">
-      <select name="set-to-view" v-model="selected" class="flex-grow p-3 rounded-lg appearance-none">
+      <select
+        name="set-to-view"
+        v-model="selected"
+        class="flex-grow p-3 rounded-lg text-white bg-gray-800 appearance-none"
+      >
         <option value="notFollowingYouBack">Doesn't follow you back ({{ notFollowingYouBack.size }})</option>
         <option value="notFollowingThemBack">You don't follow them back ({{ notFollowingThemBack.size }})</option>
         <option value="followers">Followers ({{ followers.size }})</option>

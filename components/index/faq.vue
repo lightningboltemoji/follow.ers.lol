@@ -6,15 +6,18 @@
         Instagram allows you to request a machine-readable export of your followers and following. By uploading it here,
         this tool will tell you who doesn't follow back and vice versa.
       </p>
-      <p class="mt-3">
+      <!-- <p class="mt-3">
         Additionally, you can upload exports from
         <i>two different days</i>, and it will tell you who has unfollowed you between them.
-      </p>
+      </p> -->
     </div>
     <h1>How do I know you're not saving my data?</h1>
     <div>
       <ul class="mt-3 pl-4 list-disc">
-        <li>Before uploading your data, turn on Airplane Mode ✈ to ensure your data can't leave your phone.</li>
+        <li>
+          Before selecting your export file, you can turn on <b>Airplane Mode ✈</b> to ensure your data isn't being
+          uploaded.
+        </li>
         <li>
           This project is open source, so you can
           <ext-link href="https://github.com/lightningboltemoji/follow.ers.lol">read the code</ext-link>
