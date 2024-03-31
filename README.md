@@ -1,6 +1,6 @@
 # [follow.ers.lol](https://follow.ers.lol)
 
-Detects **who doesn't follow you back** and **who unfollowed you** using exports of your Instagram data
+Detects **who doesn't follow you back** using exports of your Instagram data
 
 ## Development
 
@@ -9,7 +9,7 @@ bun install
 bun dev
 ```
 
-Server @ http://localhost:3000
+Available @ http://localhost:3000
 
 ## Build & serve (production-like)
 
