@@ -36,10 +36,15 @@ async function parse(file: File) {
 <template>
   <page-header />
   <page-bounds>
-    <div>
-      <h2 class="text-xs">If you prefer, <b>turn on Airplane Mode ✈</b> to ensure your data is not transmitted</h2>
-      <analyze-file-select :parse />
-      <analyze-selectable-view :followers :following :notFollowingYouBack :notFollowingThemBack />
+    <div class="flex flex-col flex-grow">
+      <analyze-file-select class="flex-grow mt-3" :parse />
+      <analyze-selectable-view
+        class="flex-grow mt-5 mb-5"
+        :followers
+        :following
+        :notFollowingYouBack
+        :notFollowingThemBack
+      />
     </div>
   </page-bounds>
 </template>

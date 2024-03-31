@@ -11,9 +11,7 @@ if (process.client) {
     navigator?.userAgent.match(/iPhone/i);
   canShare = navigator?.share;
 }
-</script>
 
-<script lang="ts">
 function share() {
   if (process.client) {
     navigator.share({
@@ -25,8 +23,14 @@ function share() {
 </script>
 
 <template>
-  <div class="mt-2 text-xl text-center">
-    follow.ers.lol {{ emoji }} <button v-if="canShare" @click="share()">share</button>
+  <div class="flex mx-4 mt-2 py-1 text-xl">
+    <button class="mr-auto" @click="$router.back()">⬅️</button>
+    <NuxtLink to="/">
+      <span>follow.ers.lol {{ emoji }}</span>
+    </NuxtLink>
+    <span class="ml-auto">
+      <button v-if="canShare" @click="share()">🤝</button>
+    </span>
   </div>
   <div class="rounded-xl text-xl text-white text-center p-4 bg-orange-800 font-bold mx-4 my-2" v-if="!onMobile">
     🚨 This site is designed to be used on your phone. Switch over if possible! 🚨
