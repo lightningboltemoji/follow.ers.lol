@@ -5,7 +5,7 @@ import { toRaw } from "vue";
 const followers = ref(new Set());
 const following = ref(new Set());
 const notFollowingYouBack = computed(() => toRaw(following.value).difference(toRaw(followers.value)));
-const youDontFollowBack = computed(() => toRaw(followers.value).difference(toRaw(following.value)));
+const notFollowingThemBack = computed(() => toRaw(followers.value).difference(toRaw(following.value)));
 
 async function parseJson(entry) {
   const buff = new TextWriter();
@@ -37,16 +37,9 @@ async function parse(file: File) {
   <page-header />
   <page-bounds>
     <div>
-      <h1 class="text-xl">Analyze my data</h1>
+      <h2 class="text-xs">If you prefer, <b>turn on Airplane Mode ✈</b> to ensure your data is not transmitted</h2>
       <analyze-file-select :parse />
-      <h1>Followers</h1>
-      <div>{{ followers }}</div>
-      <h1>Following</h1>
-      <div>{{ following }}</div>
-      <h1>Not following you back</h1>
-      <div>{{ notFollowingYouBack }}</div>
-      <h1>You don't follow back</h1>
-      <div>{{ youDontFollowBack }}</div>
+      <analyze-selectable-view :followers :following :notFollowingYouBack :notFollowingThemBack />
     </div>
   </page-bounds>
 </template>
