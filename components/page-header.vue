@@ -28,10 +28,7 @@ function share() {
   <div class="mt-2 text-xl text-center">
     follow.ers.lol {{ emoji }} <button v-if="canShare" @click="share()">share</button>
   </div>
-  <div
-    class="rounded-xl text-xl text-white text-center p-4 bg-orange-800 font-bold mx-4 my-2"
-    v-if="!onMobile"
-  >
+  <div class="rounded-xl text-xl text-white text-center p-4 bg-orange-800 font-bold mx-4 my-2" v-if="!onMobile">
     🚨 This site is designed to be used on your phone. Switch over if possible! 🚨
   </div>
 </template>
