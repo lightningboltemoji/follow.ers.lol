@@ -3,8 +3,8 @@
     <h1>How does this work?</h1>
     <div>
       <p class="mt-3">
-        Instagram allows you to request a machine-readable export of your followers and following. By uploading it here,
-        this tool will tell you who doesn't follow back and vice versa.
+        Instagram allows you to request a machine-readable export of your followers and following. This tool will
+        calculate the difference between these two: who doesn't follow back and vice versa.
       </p>
       <!-- <p class="mt-3">
         Additionally, you can upload exports from

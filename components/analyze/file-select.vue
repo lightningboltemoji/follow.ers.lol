@@ -41,7 +41,7 @@ function fileChange(event) {
     </form>
     <h2 class="mt-2 text-xs text-center h-6">
       <template v-if="!selectedFile">
-        If you prefer, <b>turn on Airplane Mode ✈</b><br />to ensure your data doesn't leave your phone
+        If you prefer, <b>turn on Airplane Mode ✈</b> to ensure<br />your data doesn't leave your phone
       </template>
       <template v-else-if="selectedFile.valid"
         >✅ <b>Name matches expected format</b><br />Looks like {{ selectedFile.user }} from

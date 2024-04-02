@@ -3,12 +3,13 @@
     <p>Hi!👋</p>
     <p>First, we need to export a list of followers and following from Instagram.</p>
     <p>
-      This is easy to do, but it's <b>critical</b> you get all options <b>exactly</b> right. I recommend reading the
-      instructions for a step, completing it, then jumping back to the guide for the next.
+      This is easy to do, but it's critical you get <b>all options exactly right</b>. Switch back and forth between
+      Instagram and this guide as much as you need to.
     </p>
     <p>Also, <b>have your password handy</b>. Don't worry: Instagram will ask for it, not this site.</p>
   </guide-step>
-  <guide-step class="mt-16 opacity-40" :index="-1">
+  <guide-step class="opacity-40" :index="-1">
+    <div class="pt-10"></div>
     <div class="pt-8 h-0 border-t-2 border-black"></div>
     <p>Alternatively, if you want to try the short, text-based version (the <b>hard way</b>):</p>
     <div class="mt-2">
