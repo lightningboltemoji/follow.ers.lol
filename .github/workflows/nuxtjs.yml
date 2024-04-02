@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
+  deployments: write
   id-token: write
+  pages: write
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -34,6 +35,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
+      - name: Deploy to CloudFlare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: follow-ers-lol
+          directory: .output/public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
   deploy:
     environment:
       name: github-pages
