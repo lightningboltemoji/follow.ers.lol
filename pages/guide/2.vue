@@ -5,7 +5,10 @@
     <nuxt-img format="webp" src="guide/2_1.png" />
     <p>Click the settings menu in the top right</p>
     <nuxt-img format="webp" src="guide/2_2.png" />
-    <p>Click <b>Settings and privacy</b></p>
+    <p>
+      Click <b>Settings and privacy</b><br />
+      <span class="text-xs">Only some accounts will see this, continue if you land directly in settings</span>
+    </p>
     <nuxt-img format="webp" src="guide/2_3.png" />
     <p>Click <b>Account Center</b></p>
     <nuxt-img format="webp" src="guide/2_4.png" />

@@ -1,6 +1,6 @@
 <template>
   <guide-step :index="3">
-    <h1>Get a data request started</h1>
+    <h1>Start a data request</h1>
     <p>Click <b>Your information and permissions</b></p>
     <nuxt-img format="webp" src="guide/3_1.png" />
     <p>Click <b>Download your information</b></p>

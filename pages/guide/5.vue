@@ -14,7 +14,7 @@
     <nuxt-img src="guide/5_2.png" />
     <p>Instagram will prompt you for your password</p>
     <nuxt-img src="guide/5_3.png" />
-    <p>Download the export and you're ready to go 🎉</p>
+    <p>Download the export 🎉</p>
     <nuxt-img src="guide/5_4.png" />
   </guide-step>
 </template>
