@@ -7,7 +7,12 @@
 </template>
 
 <style>
+* {
+  --primary-bg-color: #ffd447;
+  --alert-bg-color: #9c4221;
+}
+
 body {
-  background-color: #ffd447;
+  background-color: var(--primary-bg-color);
 }
 </style>

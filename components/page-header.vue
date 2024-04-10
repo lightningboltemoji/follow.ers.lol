@@ -23,16 +23,25 @@ function share() {
 </script>
 
 <template>
-  <div class="flex mx-4 py-2 text-xl sticky top-0 bg-[#ffd447] select-none">
-    <button class="mr-auto" @click="$router.back()">⬅️</button>
-    <NuxtLink to="/">
-      <span>follow.ers.lol {{ emoji }}</span>
-    </NuxtLink>
-    <span class="ml-auto">
-      <button v-if="canShare" @click="share()">🤝</button>
-    </span>
+  <div class="flex mx-4 py-2 text-xl sticky top-0 bg-[var(--primary-bg-color)] select-none">
+    <page-bounds>
+      <div class="flex flex-grow">
+        <button class="mr-auto" @click="$router.back()">⬅️</button>
+        <NuxtLink to="/">
+          <span>follow.ers.lol {{ emoji }}</span>
+        </NuxtLink>
+        <span class="ml-auto">
+          <button v-if="canShare" @click="share()">🤝</button>
+        </span>
+      </div>
+    </page-bounds>
   </div>
-  <div class="rounded-xl text-xl text-white text-center p-4 bg-orange-800 font-bold mx-4 my-2" v-if="!onMobile">
-    🚨 This site is designed to be used on your phone. Switch over if possible! 🚨
-  </div>
+  <page-bounds>
+    <div
+      class="rounded-xl text-xl text-white text-center py-4 bg-[var(--alert-bg-color)] font-bold my-2"
+      v-if="!onMobile"
+    >
+      🚨 This site is designed to be used on your phone. Switch over if possible! 🚨
+    </div>
+  </page-bounds>
 </template>

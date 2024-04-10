@@ -4,7 +4,7 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <div class="mt-8 text-xl [&>h1]:text-4xl [&>h1:not(:first-child)]:mt-3 [&>p:not(:first-child)]:mt-6">
+  <div class="mt-8 [&>h1]:text-3xl [&>h1:not(:first-child)]:mt-3 [&>p:not(:first-child)]:mt-6 [&>img]:mt-6">
     <slot />
     <div class="flex justify-end mt-8">
       <NuxtLink :to="props.index < 0 ? `/analyze` : `/guide/${props.index + 1}`">
