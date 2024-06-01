@@ -8,7 +8,7 @@ const props = defineProps<{
     <slot />
     <div class="flex justify-end mt-8">
       <NuxtLink :to="props.index < 0 ? `/analyze` : `/guide/${props.index + 1}`">
-        <button class="bg-gray-800 text-white rounded-xl px-6 py-2 text-lg">
+        <button class="bg-secondary text-white rounded-xl px-6 py-2 text-lg">
           {{ props.index < 0 ? "Finish" : "Next" }}
         </button>
       </NuxtLink>

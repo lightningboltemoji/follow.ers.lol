@@ -23,7 +23,7 @@ function share() {
 </script>
 
 <template>
-  <div class="flex mx-4 py-2 text-xl sticky top-0 bg-[var(--primary-bg-color)] select-none">
+  <div class="flex mx-4 py-2 text-xl sticky top-0 bg-primary select-none">
     <page-bounds>
       <div class="flex flex-grow">
         <button class="mr-auto" @click="$router.back()">⬅️</button>
@@ -37,11 +37,12 @@ function share() {
     </page-bounds>
   </div>
   <page-bounds>
-    <div
-      class="rounded-xl text-xl text-white text-center py-4 bg-[var(--alert-bg-color)] font-bold my-2"
-      v-if="!onMobile"
-    >
-      🚨 This site is designed to be used on your phone. Switch over if possible! 🚨
+    <div class="flex rounded-xl py-4 bg-alert my-2" v-if="!onMobile">
+      <div class="m-auto text-3xl">🚨</div>
+      <div class="font-bold text-xl text-white text-center">
+        This site works best on your phone<br />Switch over if possible
+      </div>
+      <div class="m-auto text-3xl">🚨</div>
     </div>
   </page-bounds>
 </template>

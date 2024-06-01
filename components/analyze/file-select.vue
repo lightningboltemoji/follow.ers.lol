@@ -37,7 +37,7 @@ function fileChange(event) {
         </span>
       </label>
       <input class="hidden" type="file" id="fileInput" @change="fileChange" ref="fileInput" required />
-      <button type="submit" class="bg-gray-800 text-white rounded-r-lg py-3 px-3">Analyze</button>
+      <button type="submit" class="bg-secondary text-white rounded-r-lg py-3 px-3">Analyze</button>
     </form>
     <h2 class="mt-2 text-xs text-center h-6">
       <template v-if="!selectedFile">

@@ -8,11 +8,10 @@
 
 <style>
 * {
-  --primary-bg-color: #ffd447;
-  --alert-bg-color: #9c4221;
+  color: theme("colors.secondary");
 }
 
 body {
-  background-color: var(--primary-bg-color);
+  background-color: theme("colors.primary");
 }
 </style>

@@ -16,7 +16,7 @@ const selectedSet = computed(() => props[selected.value]);
       <select
         name="set-to-view"
         v-model="selected"
-        class="flex-grow p-3 rounded-lg text-white bg-gray-800 appearance-none"
+        class="flex-grow p-3 rounded-lg text-white bg-secondary appearance-none"
       >
         <option value="notFollowingYouBack">Doesn't follow you back ({{ notFollowingYouBack.size }})</option>
         <option value="notFollowingThemBack">You don't follow them back ({{ notFollowingThemBack.size }})</option>
