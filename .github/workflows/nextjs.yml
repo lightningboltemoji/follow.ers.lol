@@ -1,0 +1,38 @@
+name: Deploy Next.js site to CloudFlare Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  deployments: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-next-build-v3-${{ hashFiles('bun.lockb') }}
+          restore-keys: ${{ runner.os }}-next-build-v1-
+      - name: Install dependencies
+        run: bun install
+      - name: Build with Next.js
+        run: bun run build
+      - name: Deploy to CloudFlare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: follow-ers-lol
+          directory: out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
