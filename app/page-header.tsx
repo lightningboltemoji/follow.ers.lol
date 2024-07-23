@@ -27,7 +27,7 @@ export default function PageHeader() {
   const [canShare, setCanShare] = useState(false);
   useEffect(() => setCanShare(!!window.navigator.share), []);
 
-  const emojis = ["😇" /*"🤩", "🥸", "🫠", "🤠"*/];
+  const emojis = ["😇", "🤩", "🥸", "🫠", "🤠"];
   const [emoji, _] = useState(emojis[Math.floor(Math.random() * emojis.length)]);
 
   const router = useRouter();
@@ -40,7 +40,7 @@ export default function PageHeader() {
               ⬅️
             </button>
             <Link href="/">
-              <span>follow.ers.lol {emoji}</span>
+              <span suppressHydrationWarning={true}>follow.ers.lol {emoji}</span>
             </Link>
             <span className="ml-auto">{canShare && <button onClick={share}>🤝</button>}</span>
           </div>

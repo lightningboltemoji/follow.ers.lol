@@ -4,13 +4,10 @@ export default function Intro() {
   return (
     <div className="mt-8 [&>p:not(:first-child)]:mt-6">
       <p>Hi!👋</p>
-      <p>First, we need to export a list of followers and following from Instagram.</p>
+      <p>First, we need to request a list of your followers and following from Instagram.</p>
       <p>
-        This is easy to do, but it's critical you get <b>all options exactly right</b>. Switch back and forth between
-        Instagram and this guide as much as you need to.
-      </p>
-      <p>
-        Also, <b>have your password handy</b>. Don't worry: Instagram will ask for it, not this site.
+        This is easy to do, but it's critical you get <b>all options exactly right</b>. Also,
+        <b> have your password handy</b>. Instagram will ask for it, not this site.
       </p>
       <div className="flex justify-end mt-8">
         <Link href="/guide/walkthrough">
@@ -64,7 +61,7 @@ export default function Intro() {
             <li>
               Navigate back to <b>Download your information</b>
             </li>
-            <li>Download the export!</li>
+            <li>Download the export</li>
           </ul>
         </div>
         <div className="flex justify-end mt-8">
