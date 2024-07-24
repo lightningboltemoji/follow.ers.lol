@@ -7,25 +7,25 @@
     "build": "next build",
     "lint": "next lint",
     "serve": "bunx serve out",
-    "clean": "rm -rf .next node_modules out"
+    "clean": "rm -rf .next node_modules out next-env.d.ts"
   },
   "dependencies": {
     "@zip.js/zip.js": "^2.7.47",
-    "framer-motion": "^11.3.8",
+    "framer-motion": "^11.3.12",
     "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
+    "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
-    "postcss": "^8",
+    "postcss": "^8.4.39",
     "prettier-plugin-organize-imports": "^4.0.0",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.4"
   }
 }
