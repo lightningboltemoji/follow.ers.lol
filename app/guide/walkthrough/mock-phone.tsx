@@ -1,50 +1,66 @@
-function HomeScreenIcon() {
-  return <div className="inline-block m-auto w-[18%] aspect-square rounded-lg bg-gray-500"></div>;
-}
-
-function HomeScreenRow() {
-  return (
-    <div className="flex grow mx-1">
-      <HomeScreenIcon />
-      <HomeScreenIcon />
-      <HomeScreenIcon />
-      <HomeScreenIcon />
-    </div>
-  );
-}
+import { AnimationPlaybackControls, Segment, useAnimate } from "framer-motion";
+import { RefObject, useEffect, useRef, useState } from "react";
+import HomeScreen from "./home-screen";
+import InstagramFeed from "./instagram-feed";
 
 export default function MockPhone(props: { step: number }) {
+  const [_, setAnimationState] = useState<{ step?: number; running?: AnimationPlaybackControls }>({});
+  const [scope, animate] = useAnimate();
+  const appIconRef = useRef<HTMLDivElement>(null);
+  const homeScreenRef = useRef<HTMLDivElement>(null);
+  const instagramAppRef = useRef<HTMLDivElement>(null);
+
+  function hide<T extends Element>(ref: RefObject<T>): Segment {
+    return [ref.current!, { visibility: "hidden" }, { duration: 0.001 }];
+  }
+
+  function unhide<T extends Element>(ref: RefObject<T>): Segment {
+    return [ref.current!, { visibility: "unset" }, { duration: 0.001 }];
+  }
+
+  useEffect(
+    () =>
+      setAnimationState((s) => {
+        const { step } = props;
+        if (
+          step === s.step ||
+          !(scope.current && appIconRef.current && homeScreenRef.current && instagramAppRef.current)
+        ) {
+          return s;
+        }
+
+        s.running?.complete();
+
+        var running;
+        if (step == 0) {
+          running = animate([
+            unhide(homeScreenRef),
+            [appIconRef.current, { scale: 1, filter: "blur(0px)" }, { bounce: 0, duration: 0.5 }],
+            [homeScreenRef.current, { opacity: 1 }, { at: "-0.2" }],
+            [instagramAppRef.current, { opacity: 0 }, { at: "<" }],
+            hide(instagramAppRef),
+          ]);
+        } else if (step == 1) {
+          running = animate([
+            unhide(instagramAppRef),
+            [appIconRef.current, { scale: 15, filter: "blur(0.4vh)" }, { bounce: 0, duration: 0.5 }],
+            [homeScreenRef.current, { opacity: 0 }, { at: "-0.2" }],
+            [instagramAppRef.current, { opacity: 1 }, { at: "<" }],
+            hide(homeScreenRef),
+          ]);
+        }
+        return { running, step };
+      }),
+    [scope, animate, props],
+  );
+
   return (
-    <div className="flex-row min-h-[60vh] max-h-[60vh] aspect-[9/19] rounded-[4vh] border-2 border-gray-600 overflow-hidden">
-      <div className="flex flex-col min-h-full bg-gray-200">
-        <div className="flex grow-[10] text-[1.5vh]">
-          <span className="grow basis-1 px-[1vh] m-auto text-center">9:41</span>
-          <span className="grow basis-8 bg-black my-3 rounded-full" />
-          <div className="flex grow basis-1 px-[1vh] m-auto text-center justify-center">
-            {[
-              ["signal", "Cellular signal icon"],
-              ["wifi", "WiFi icon"],
-              ["battery", "Battery charge icon"],
-            ].map(([icon, alt]) => (
-              <img key={icon} className="grow-0 size-[1.5vh] mr-[0.75vh]" src={`/${icon}.svg`} alt={alt} />
-            ))}
-          </div>
-        </div>
-        <div className="flex grow-[75]">
-          <div className="flex flex-col grow">
-            <HomeScreenRow />
-            <HomeScreenRow />
-            <HomeScreenRow />
-            <HomeScreenRow />
-            <HomeScreenRow />
-          </div>
-        </div>
-        <div className="flex grow-[15] bg-gray-400 rounded-[2.5vh] m-[0.5vh] mb-[1vh]">
-          <div className="flex grow items-center">
-            <HomeScreenRow />
-          </div>
-        </div>
-      </div>
+    <div
+      ref={scope}
+      className="relative flex-row min-h-[60vh] max-h-[60vh] aspect-[9/19] rounded-[4vh] border-2 border-gray-600 overflow-hidden"
+    >
+      <HomeScreen ref={homeScreenRef} appIconRef={appIconRef} className="opacity-100" />
+      <InstagramFeed ref={instagramAppRef} />
     </div>
   );
 }

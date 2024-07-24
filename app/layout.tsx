@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import PageBounds from "./page-bounds";
 import PageHeader from "./page-header";
 
 export const metadata: Metadata = {
@@ -17,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <PageHeader />
-        <PageBounds>{children}</PageBounds>
+        {children}
       </body>
     </html>
   );

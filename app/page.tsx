@@ -1,10 +1,11 @@
 import Link from "next/link";
 import FAQ from "./faq";
 import Jumbo from "./jumbo";
+import PageBounds from "./page-bounds";
 
 export default function Home() {
   return (
-    <>
+    <PageBounds>
       <Jumbo />
       <div className="flex flex-col items-center mt-6 mb-8">
         <Link href="/guide/intro">
@@ -17,6 +18,6 @@ export default function Home() {
         </Link>
       </div>
       <FAQ className="mt-10" />
-    </>
+    </PageBounds>
   );
 }

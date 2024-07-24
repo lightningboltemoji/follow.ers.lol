@@ -1,8 +1,9 @@
+import PageBounds from "@/app/page-bounds";
 import Link from "next/link";
 
 export default function Intro() {
   return (
-    <div className="mt-8 [&>p:not(:first-child)]:mt-6">
+    <PageBounds className="mt-8 [&_p:not(:first-child)]:mt-6">
       <p>Hi!👋</p>
       <p>First, we need to request a list of your followers and following from Instagram.</p>
       <p>
@@ -70,6 +71,6 @@ export default function Intro() {
           </Link>
         </div>
       </div>
-    </div>
+    </PageBounds>
   );
 }
